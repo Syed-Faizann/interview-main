@@ -32,7 +32,7 @@ export default function GoalTabs() {
     >
       {/* Animated sliding background */}
       <div
-        className="absolute top-1 left-0 h-[calc(100%-0.25rem)] bg-[#E04C6B] rounded-full transition-all duration-300"
+        className="absolute top left-0 h-[calc(100%-0.25rem)] bg-[#E04C6B] rounded-full transition-all duration-300"
         style={highlightStyle}
       />
 

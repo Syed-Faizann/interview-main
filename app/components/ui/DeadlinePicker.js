@@ -9,12 +9,12 @@ export default function DeadlinePicker() {
 
   return (
     <div className="mt-4">
-      <h2 className="text-sm font-semibold mb-2">Deadline</h2>
+      <h2 className="text-sm font-semibold mb-2 sm:text-base md:text-lg">Deadline</h2>
 
-      <div className="grid grid-cols-2 gap-4">
-        {/* Date */}
-        <div>
-          <label className="text-xs text-gray-400 mb-1 block">Date</label>
+      <div className="flex flex-col sm:flex-row sm:items-end gap-4">
+        {/* Date - Takes full width on mobile, half on larger screens */}
+        <div className="w-full sm:flex-1">
+          <label className="text-xs text-gray-400 mb-1 block sm:text-sm md:text-base">Date</label>
           <div className="relative">
             <input
               type="date"
@@ -25,24 +25,49 @@ export default function DeadlinePicker() {
                 bg-white
                 text-black
                 rounded-lg
-                px-3 py-2 pr-10
+                border
+                border-gray-300
+                px-4
+                py-3
+                sm:px-3
+                sm:py-2
+                md:px-4
+                md:py-3
+                pr-10
                 text-sm
+                sm:text-base
                 focus:outline-none
                 focus:ring-2
                 focus:ring-[#E04C6B]
+                focus:border-transparent
                 [&::-webkit-calendar-picker-indicator]:opacity-0
+                hover:border-gray-400
+                transition-colors
+                duration-200
+                min-h-[48px]
+                sm:min-h-[44px]
+                md:min-h-[48px]
               "
             />
             <Calendar
-              size={16}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-[#E04C6B] pointer-events-none"
+              className="
+                absolute
+                right-3
+                top-1/2
+                -translate-y-1/2
+                text-[#E04C6B]
+                pointer-events-none
+                w-5 h-5
+                sm:w-4 sm:h-4
+                md:w-5 md:h-5
+              "
             />
           </div>
         </div>
 
-        {/* Time */}
-        <div>
-          <label className="text-xs text-gray-400 mb-1 block">Time</label>
+        {/* Time - Takes full width on mobile, half on larger screens */}
+        <div className="w-full sm:flex-1">
+          <label className="text-xs text-gray-400 mb-1 block sm:text-sm md:text-base">Time</label>
           <div className="relative">
             <input
               type="time"
@@ -53,21 +78,51 @@ export default function DeadlinePicker() {
                 bg-white
                 text-black
                 rounded-lg
-                px-3 py-2 pr-10
+                border
+                border-gray-300
+                px-4
+                py-3
+                sm:px-3
+                sm:py-2
+                md:px-4
+                md:py-3
+                pr-10
                 text-sm
+                sm:text-base
                 focus:outline-none
                 focus:ring-2
                 focus:ring-[#E04C6B]
+                focus:border-transparent
                 [&::-webkit-calendar-picker-indicator]:opacity-0
+                hover:border-gray-400
+                transition-colors
+                duration-200
+                min-h-[48px]
+                sm:min-h-[44px]
+                md:min-h-[48px]
               "
             />
             <Clock
-              size={16}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-[#E04C6B] pointer-events-none"
+              className="
+                absolute
+                right-3
+                top-1/2
+                -translate-y-1/2
+                text-[#E04C6B]
+                pointer-events-none
+                w-5 h-5
+                sm:w-4 sm:h-4
+                md:w-5 md:h-5
+              "
             />
           </div>
         </div>
       </div>
+
+      {/* Helper text for mobile users */}
+      <p className="text-xs text-gray-500 mt-2 sm:hidden">
+        Pick a date and time for your deadline
+      </p>
     </div>
   )
 }
